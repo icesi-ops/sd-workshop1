@@ -1,0 +1,15 @@
+	(1..5).each do |i|
+	config.vm.define "web-#{i}" do |web|
+		web.vm.box = "centos/7"
+		web.vm.network "private_network", type:"dhcp"
+		web.vm.hostname = "web-#{i}"
+		web.vm.provider "virtualbox" do |vb|
+			vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
+		end
+		web.vm.provision :shell, inline: "echo i'm $HOSTNAME"
+	end
+end
+	config.vm.define "db" do |db|
+		db.vm.box = "centos/7"
+		db.vm.provision "shell", inline: "echo hello c"
+	end
