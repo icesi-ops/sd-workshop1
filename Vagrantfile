@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
       web.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
      end
-     web.vm.provision "file", source: "/home/ubuntu/sd-workshop1/script.sh", destination: "./script.sh"
+     web.vm.provision "file", source: "./script.sh", destination: "./script.sh"
    end
   end
  end 
