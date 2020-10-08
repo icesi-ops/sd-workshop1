@@ -1,0 +1,16 @@
+Vagrant.configure("2") do |config|
+config.vm.provision "file", source: "~/sd-workshop1/script.sh", destination: "script.sh"
+
+config.vm.provision "shell", inline: "chmod +x script.sh"
+config.vm.provision "shell", inline: "./script.sh"
+
+(1..2).each do |i|
+config.vm.define "web-#{i}" do |web|
+     web.vm.box = "centos/7"
+     config.vm.network "public_network", type: "dhcp"
+     web.vm.hostname = "web-#{i}"
+     end
+     
+end
+    
+end
