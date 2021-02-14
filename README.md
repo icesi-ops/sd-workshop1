@@ -6,6 +6,7 @@
 2. Hostname, Dirección IP, Date y Memoria Ram Libre
 
 ####Bonus
+
 3. Direcciones IP dinámicas
 
 
