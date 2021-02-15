@@ -9,7 +9,7 @@
        
        sudo yum install -y httpd
        sudo yum install nano
-       echo "NameVirtualHost *:80
+       sudo echo "NameVirtualHost *:80
 
 <VirtualHost *:80>
     ServerAdmin jaimecardona364@gmail.com
@@ -18,7 +18,7 @@
     DocumentRoot /var/www/html/icesi.com/
     ErrorLog /var/log/httpd/icesi.com/error.log
     CustomLog /var/log/httpd/icesi.com/access.log combined
-</VirtualHost>" > /etc/httpd/conf.d/vhost.conf
+</VirtualHost>" >> /etc/httpd/conf.d/vhost.conf
        sudo mkdir -p /var/www/html/icesi.com
        sudo mkdir -p /var/log/httpd/icesi.com
        sudo curl https://www.icesi.edu.co/es/  > /var/www/html/icesi.com/index.html 
