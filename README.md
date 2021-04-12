@@ -1,7 +1,17 @@
 # sd-workshop1
 
-1. Configuradr un servidor web que sea scraping de Icesi
-2. Dentro de script.sh print HOSTNAME, IP, TImestamp(date), Memoria Ram free
+1. configurar un servidor web que sea scraping de icesi
+2. dentro de script.sh print hostname, ip, timestamp(date), memoria ram free
 
-#BONUS
-Asignación de direcciones IP sea dinamica
+#bonus
+Asignación de direcciones ip sea dinamica
+#solucion
+Para cumplir el punto 1 se hizo lo siguiente: 
+
+Primero instalar y configurar la vm con centos/7 que serviría de web. seguido, se descragó httpd en la vm para poder utilizar el servicio we. y por útlimo se descargó el index.html de la página web de icesi con el comando `wget www.icesi.edu.co `en la carpeta `/var/www/html/ `para que pudiese ser cargado por el servidor de apache, y de esta forma se hizo el scraping. la configuración de la web se encuntra en el archivo serverconf.sh
+
+Para cumplir el punto 2, se redactoron los comandos en elarchivo script.sh de la carpeta source. 
+
+El bonus, el cual consistía en asignar la ip dinámica, se obordó cambiando el parámetro ip de la primera máquina, a `type` y asignándole el valor de `"dhcp".` la configuración de esta segunda vm fue similar a la primera. en el archivo  dhcp.sh se encuentran loscomandos. 
+
+#ByMelqui
