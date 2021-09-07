@@ -1,0 +1,5 @@
+echo "hostname: $(hostname)"
+echo "ip: $(hostname -i | awk '{print $1}')"
+echo "timestamp: $(date)"
+echo "available disk space: $(df -H /)"
+echo "most consuming process running: $(ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 2)"
