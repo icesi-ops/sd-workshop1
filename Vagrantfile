@@ -1,23 +1,30 @@
+$script = <<-'SCRIPT'
+sh Script.sh
+SCRIPT
+
 Vagrant.configure("2") do |config|
 
   config.vm.provision :shell, inline: "echo ai"
   (1..2).each do |i|
    config.vm.define "web-#{i}" do |web|
-     web.vm.box = "centos/7"
+  config.vm.box = "hashicorp/bionic64"
      web.vm.hostname = "web-#{i}"
-     web.vm.network "private_network", ip: "192.168.33.1#{i}"
+     
+     web.vm.provision "file", source: "~/Desktop/Vagrant/sd-workshop1/Script.sh", destination: "./Script.sh"
+     web.vm.provision "file", source: "~/Desktop/Vagrant/sd-workshop1/index.html", destination: "./index.html"
+     web.vm.network "private_network", type: "dhcp"
      web.vm.provider "virtualbox" do |vb|
+     web.vm.provision :shell, inline: $script
       vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
      end
-     web.vm.provision "file", source: "sources/", destination: "src"
-     web.vm.provision "shell", inline: "src/script.sh"
+     
    end
   end
 
   config.vm.define "db" do |db|
-   db.vm.box = "centos/7"
-   db.vm.provision "shell", inline: "echo c"
+   db.vm.box = "hashicorp/bionic64"
   end
 
-  config.vm.provision :shell, inline: "echo d"
 end
+
+
