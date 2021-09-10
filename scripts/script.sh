@@ -1,5 +1,5 @@
 echo "Hostname: $(hostname)"
-echo "IP: $(hostname -i | awk '{print $1}')"
+echo "IP: $(curl ifconfig.me)"
 echo "Timestamp Server: $(date)"
 echo "Disk Space Available: $(df -H /)"
 echo "Process running: $(ps -e | head)"

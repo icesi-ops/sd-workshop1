@@ -1,6 +1,5 @@
 Vagrant.configure("2") do |config|
 
-  config.vm.provision :shell, inline: "echo ai"
   (1..2).each do |i|
    config.vm.define "web-#{i}" do |web|
      web.vm.box = "centos/7"
