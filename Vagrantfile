@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
      end
      web.vm.provision "file", source: "scripts/", destination: "src"
+     web.vm.provision "shell", inline: "chmod +x src/script.sh"
      web.vm.provision "shell", inline: "src/script.sh"
    end
   end
