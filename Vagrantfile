@@ -9,15 +9,8 @@ Vagrant.configure("2") do |config|
      web.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
      end
-     web.vm.provision "file", source: "sources/", destination: "src"
+     web.vm.provision "file", source: "scripts/", destination: "src"
      web.vm.provision "shell", inline: "src/script.sh"
    end
   end
-
-  config.vm.define "db" do |db|
-   db.vm.box = "centos/7"
-   db.vm.provision "shell", inline: "echo c"
-  end
-
-  config.vm.provision :shell, inline: "echo d"
 end
