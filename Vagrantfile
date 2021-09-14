@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
      machine.vm.provision "shell", inline: "chmod +x script.sh"
      machine.vm.provision "shell", inline: "./script.sh"
 
+     machine.vm.provision "shell", inline: "sudo yum -y install epel-release"
      machine.vm.provision "shell", inline: "sudo yum install wget -y"
      machine.vm.provision "shell", inline: "echo instaló el wget"
      machine.vm.provision "shell", inline: "sudo yum install -y nginx"
