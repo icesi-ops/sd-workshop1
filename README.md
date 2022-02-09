@@ -1,6 +1,6 @@
 ## CAMILO ENRIQUEZ DELGADO
 
-## DIFERENCIAS ENTRE CMD Y Entrypoint
+## DIFERENCIAS ENTRE CMD Y ENTRYPOINT
 Las `ENTRYPOINT` especifican un comando que siempre se ejecuta cuando se inicia el contenedor.
 
 El `CMD` especifica los argumentos que serán alimentados al `ENTRYPOINT`.
