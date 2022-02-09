@@ -11,8 +11,10 @@ De lo contrario, si desea crear una imagen para fines generales, puede dejarla s
 
 ## EVIDENCIAS
 #Docker Corrriendo
+
 ![Docker Corriendo](https://user-images.githubusercontent.com/47835629/153266685-bd7d7581-ba98-4467-a0c6-67322b04d60d.png)
 #Web Scrapping de Youtube.com usando debian
+
 ![Web Scrapping de Youtube.com usando debian](https://user-images.githubusercontent.com/47835629/153266819-5be13f9f-e3c1-428d-a74e-ee9844bc4056.png)
 
 
