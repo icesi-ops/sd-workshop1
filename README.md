@@ -1,9 +1,11 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+## DIFERENCIAS ENTRE CMD Y Entrypoint
+Las 'ENTRYPOINT' especifican un comando que siempre se ejecuta cuando se inicia el contenedor.
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+El 'CMD' especifica los argumentos que serán alimentados al 'ENTRYPOINT'.
 
-PR a sd-workshop1
+Si desea hacer una imagen dedicada a un comando específico, se utiliza 'ENTRYPOINT ["/path/dedicated_command"]'
+
+De lo contrario, si desea crear una imagen para fines generales, puede dejarla sin especificar 'ENTRYPOINT' y usar, 'CMD ["/path/dedicated_command"]' ya que podrá anular la configuración al proporcionar argumentos a 'docker run'.
+
+## EVIDENCIAS
+
