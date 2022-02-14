@@ -7,6 +7,8 @@ Si se sobre escriben los 2:
 	El ENTRYPOINT especifica el ejecutable que usará el contenedor.
 	CMD se corresponde con los parámetros a usar con dicho ejecutable.
 
+En general el ENTRYPOINT siempre se ejecutara al iniciar el contenedor y no es tan sencillo hacerle override a sus argumentos, pero el CMD puede ser remplazado con facilidad.
+
 
 ## Referencias
  * https://programacionymas.com/blog/docker-diferencia-entrypoint-cmd#:~:text=El%20ENTRYPOINT%20especifica%20el%20ejecutable,a%20usar%20con%20dicho%20ejecutable.
