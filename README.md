@@ -1,9 +1,5 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# Javier Torres - A00352115
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
-
-PR a sd-workshop1
+# Diferencias CMD y Entrypoint
+Ambos permiten ejecutar comandos cuando se inicia el contenedor. Sin embargo, es fácil hacerle override a un comando especificado con CMD, mas no a uno con Entrypoint.
+CMD también permite definir parámetros por defecto, por lo que es posible combinar ambas instrucciones, Entrypoint para definir un ejecutable para el contenedor, y CMD para definir sus parámetros que pueden modificarse fácilmente.
