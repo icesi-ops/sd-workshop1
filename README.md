@@ -1,9 +1,23 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+## CAMILO ENRIQUEZ DELGADO
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+## DIFERENCIAS ENTRE CMD Y ENTRYPOINT
+Las `ENTRYPOINT` especifican un comando que siempre se ejecuta cuando se inicia el contenedor.
 
-PR a sd-workshop1
+El `CMD` especifica los argumentos que serán alimentados al `ENTRYPOINT`.
+
+Si desea hacer una imagen dedicada a un comando específico, se utiliza `ENTRYPOINT ["/path/dedicated_command"]`
+
+De lo contrario, si desea crear una imagen para fines generales, puede dejarla sin especificar `ENTRYPOINT` y usar, `CMD ["/path/dedicated_command"]` ya que podrá anular la configuración al proporcionar argumentos a 'docker run'.
+
+## EVIDENCIAS
+
+### Docker Corrriendo
+
+![Docker Corriendo](https://user-images.githubusercontent.com/47835629/153266685-bd7d7581-ba98-4467-a0c6-67322b04d60d.png)
+
+### Web Scrapping de Youtube.com usando debian
+
+![Web Scrapping de Youtube.com usando debian](https://user-images.githubusercontent.com/47835629/153266819-5be13f9f-e3c1-428d-a74e-ee9844bc4056.png)
+
+
+
