@@ -1,9 +1,13 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# sd-workshop1 
+*Mateo Gallego Ramirez - A00347937*
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+##  ETRYPOINT vs CMD
+**ENTRYPOINT** es el punto de entrada cuando se crea la imagen, definiendo el proceso que se ejecutará al iniciarse el contenedor. siendo su valor predeterminado /bin/sh -c
 
-PR a sd-workshop1
+Por otra parte, **CMD** se encarga de ejecutar comandos junto a sus argumentos dependiendo del **ENTRYPOINT**
+
+## Evidencias funcionamiento del servidor scraping 
+### Contenedor corriendo
+![evidencia 1](https://github.com/kiiwii1999/sd-workshop1/blob/master/resourses/container-runing.png)
+### Pagina en mi navegador 
+![evidencia 2](https://github.com/kiiwii1999/sd-workshop1/blob/master/resourses/scraping-magic.png)
