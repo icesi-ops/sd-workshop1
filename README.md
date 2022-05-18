@@ -8,6 +8,6 @@ Por otra parte, **CMD** se encarga de ejecutar comandos junto a sus argumentos d
 
 ## Evidencias funcionamiento del servidor scraping 
 ### Contenedor corriendo
-![](https://github.com/kiiwii1999/sd-workshop1.git/resourses/container-runing.png){width='100px'}
+![evidencia 1](https://github.com/kiiwii1999/sd-workshop1/blob/master/resourses/container-runing.png)
 ### Pagina en mi navegador 
-![](https://github.com/kiiwii1999/sd-workshop1.git/resourses/scraping-magic.png){width='100px'}
+![evidencia 2](https://github.com/kiiwii1999/sd-workshop1/blob/master/resourses/scraping-magic.png)
