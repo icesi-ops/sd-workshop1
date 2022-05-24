@@ -1,9 +1,8 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# sd-workshop1 2022-A
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+# Diferencias entre CMD y ENTRYPOINT
 
-PR a sd-workshop1
+-CMD es un comando aplicado a servicios y los parametros evita que se cierre, es persistente y reescribirle
+-ENTRYPOINT no es reescribible y especifica el ejecutable que usa el contenedor. 
+
+Por lo tanto, si solo usamos el comando CMD, el ENTRYPOINT será predeterminado, en cambio al usar ambos comandos ENTRYPOINT será el encargado de especificar el ejecutable del contenedor y CMD se utiliza como los parametros del ejecutable. 
