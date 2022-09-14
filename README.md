@@ -1,9 +1,16 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# Microservice App - PRFT Devops Training
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+### Workshops
+#### First and second
+ To check out more details about the provisioning follow this link: [Click here](./terraform/provisioning.md) 
+ 
 
-PR a sd-workshop1
+## About the base project
+This is the application you are going to use through the whole traninig. This, hopefully, will teach you the fundamentals you need in a real project. You will find a basic TODO application designed with a [microservice architecture](https://microservices.io). Although is a TODO application, it is interesting because the microservices that compose it are written in different programming language or frameworks (Go, Python, Vue, Java, and NodeJS). With this design you will experiment with multiple build tools and environments. 
+
+
+## Architecture
+
+![microservice-app-example](/azurediagram.drawio.png)
+
+
