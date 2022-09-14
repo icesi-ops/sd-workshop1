@@ -20,4 +20,4 @@ Resources in Azure:
 
 Prove that the command terraform destroy worked:
 
-![s3](https://github.com/trp216/microservice-app-example/blob/master/terraform/img/resources.png)
+![s3](https://github.com/trp216/sd-workshop1/blob/alejandra-diaz/terraform/img/destroy.png)
