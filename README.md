@@ -1,9 +1,14 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# Workshop 1
+## Jhoan David Fiat Restrepo
+### Evidencias del Azure Portal
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+![](https://i.imgur.com/HdayTcj.png)
 
-PR a sd-workshop1
+
+#### Grupo de recursos de Azure, con toda nuestra infraestructura dentro.
+![](https://i.imgur.com/jkYtHFw.png)
+
+#### Recursos creados en el grupo de recursos, región 1 - East US
+
+![](https://i.imgur.com/QHTKlZS.png)
+![](https://i.imgur.com/9lkYV3Z.png)
