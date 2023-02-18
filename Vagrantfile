@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
       dhcp_server.vm.network "private_network", ip: "192.168.33.10"
       dhcp_server.vm.hostname = "dhcp-srv"
       dhcp_server.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "dhcp"]
+        vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "dhcp-srv"]
        end
       dhcp_server.vm.provision "shell", path: "scripts/dhcp.sh"
     end
@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
         client.vm.network "private_network", ip: "192.168.33.2#{i}"
         client.vm.hostname = "dhcp-cli#{i}"
         client.vm.provider "virtualbox" do |vb|
-          vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "client"]
+          vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "dhcp-cli#{i}"]
          end
         client.vm.provision "shell", path: "scripts/client.sh"
       end
