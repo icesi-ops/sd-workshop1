@@ -1,23 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2") do |config|
-
-  config.vm.provision :shell, inline: "echo ai"
-  (1..2).each do |i|
-   config.vm.define "web-#{i}" do |web|
-     web.vm.box = "centos/7"
-     web.vm.hostname = "web-#{i}"
-     web.vm.network "private_network", ip: "192.168.33.1#{i}"
-     web.vm.provider "virtualbox" do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "web-#{i}"]
-     end
-     web.vm.provision "file", source: "sources/", destination: "src"
-     web.vm.provision "shell", inline: "src/script.sh"
-   end
+    config.vm.define "dhcp-srv" do |dhcp_server|
+      dhcp_server.vm.box = "generic/ubuntu1804"
+      dhcp_server.vm.network "private_network", ip: "192.168.33.10"
+      dhcp_server.vm.hostname = "dhcp-srv"
+      dhcp_server.vm.provider "virtualbox" do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "dhcp-srv"]
+       end
+      dhcp_server.vm.provision "shell", path: "scripts/dhcp.sh"
+    end
+    
+    (1..1).each do |i|
+      config.vm.define "dhcp-cli" do |client|
+        client.vm.box = "generic/ubuntu1804"
+        client.vm.network "private_network", ip: "192.168.33.2#{i}"
+        client.vm.hostname = "dhcp-cli#{i}"
+        client.vm.provider "virtualbox" do |vb|
+          vb.customize ["modifyvm", :id, "--memory", "512", "--cpus", "1", "--name", "dhcp-cli#{i}"]
+         end
+        client.vm.provision "shell", path: "scripts/client.sh"
+      end
+    end
   end
-
-  config.vm.define "db" do |db|
-   db.vm.box = "centos/7"
-   db.vm.provision "shell", inline: "echo c"
-  end
-
-  config.vm.provision :shell, inline: "echo d"
-end
