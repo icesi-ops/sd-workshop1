@@ -1,9 +1,11 @@
 # sd-workshop1 2021-B
 - make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+# Solution
+- For this Workshop, I use two machines: A server and client. 
 
-PR a sd-workshop1
+# Server
+- For the server, I create a file where is all the configuration of provisioning. This file has a variable which contains the configuration to the dhcp server. Then, this file has the code to install a isc-dhcp-server and configures it, setting the interface that would be use to the server and writing the configuration using the variable $script.
+
+# Client
+- For the client, I create a file which delete the network default configuration. Then, the next line release the ip address of the machine and then ask another one to the server.

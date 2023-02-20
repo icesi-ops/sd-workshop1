@@ -11,6 +11,8 @@ subnet 192.168.20.0 netmask 255.255.255.0 {
 
 apt-get update
 apt-get install -y isc-dhcp-server
-rm dhcpd.conf
-sudo echo $script > /etc/dhcp/dhcpd.conf 
+sudo sed -i 's/INTERFACESv4=""/INTERFACESv4="eth1"/g' /etc/default/isc-dhcp-server
+cd /etc/dhcp/
+rm dhcpd.conf 
+sudo echo $script > dhcpd.conf 
 sudo systemctl restart isc-dhcp-server

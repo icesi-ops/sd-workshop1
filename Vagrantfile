@@ -10,8 +10,9 @@ config.vm.define "server" do |server|
 	server.vm.provision "shell", path: "config.sh" 
   end
 
-  config.vm.define "client" do |cliente|
-    cliente.vm.box ="generic/ubuntu1804"
-    cliente.vm.network "private_network", type: "dhcp",
+  config.vm.define "client" do |client|
+    client.vm.box ="generic/ubuntu1804"
+    client.vm.network "private_network", type: "dhcp"
+    client.vm.provision "shell", path: "configclient.sh"
   end
 end
