@@ -45,9 +45,9 @@ El provisionamiento funciona de la siguien manera:
 ## Evidencias
 A continuación se adjuntan evidencias del funcionamiento durante la creación y provisionamiento de las maquinas con el comando vagrant up:
 - Servidor DHCP activo
-![Servidor dhcp activo](./screenshots/dhcp-server_active.png?raw=true "Servidor DHCP")
+![Servidor dhcp activo](https://github.com/Juanferas/sd-workshop1/blob/master/screenshots/dhcp-server_active.PNG "Servidor DHCP")
 - Asignación dinámica de IP máquinas clientes  
 Nodo 1:
-![Servidor dhcp activo](./screenshots/assigned-ip_node1.png?raw=true "Nodo 1")
+![Servidor dhcp activo](https://github.com/Juanferas/sd-workshop1/blob/master/screenshots/assigned-ip_node1.PNG "Nodo 1")
 Nodo 2:
-![Servidor dhcp activo](./screenshots/assigned-ip_node2.png?raw=true "Nodo 2")
+![Servidor dhcp activo](https://github.com/Juanferas/sd-workshop1/blob/master/screenshots/assigned-ip_node2.PNG "Nodo 2")
