@@ -14,5 +14,5 @@ apt-get install -y isc-dhcp-server
 sudo sed -i 's/INTERFACESv4=""/INTERFACESv4="eth1"/g' /etc/default/isc-dhcp-server
 cd /etc/dhcp/
 rm dhcpd.conf 
-sudo echo $script > dhcpd.conf 
+sudo sh -c 'echo "$script" | tee /etc/dhcp/dhcpd.conf'
 sudo systemctl restart isc-dhcp-server
