@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 config.vm.define "server" do |server|
 	server.vm.hostname = "dhcpserver"
     server.vm.box ="generic/ubuntu1804"
-    server.vm.network "private_network", ip: "192.168.20.254"
+    server.vm.network "private_network", ip: "192.168.56.254"
 	server.vm.provision "shell", path: "config.sh" 
   end
 
