@@ -1,18 +1,18 @@
 
 # sd-workshop1 2024-1
 
-•	First, you must create the network and the images of the microservices configurations, both for config and invoice, to then run them in the following step:
+- First, you must create the network and the images of the microservices configurations, both for config and invoice, to then run them in the following step:
 	docker network create distribuidos 
 	docker build -t luis486/app-config:0.0.1 
-	docker build -t luis486/app-invoice:0.0.1 
-•	Then, you must run all services in a specific order to bring up the dependencies (according to the microservices being used):
-•	First, run the Kafka service, which is a publish/subscribe system (pub/sub) that provides a "broker" for distributing events.
-	docker run -p 2181:2181 -d -p 9092:9092 --name servicekafka --network distribuidos -e ADVERTISED_HOST=servicekafka -e NUM_PARTITIONS=3 johnnypark/kafka-zookeeper:2.6.0 
-•	Then, start the Consul, which is commonly used for configuration management and service discovery.
-	docker run -d -p 8500:8500 -p 8600:8600/udp --network distribuidos --name consul consul:1.15 agent -server -bootstrap-expect 1 -ui -data-dir /tmp -client=0.0.0.0 
-•	Next, start the PostgreSQL (the database that the invoice microservice will use).
+	docker build -t luis486/app-invoice:0.0.1
+- Then, you must run all services in a specific order to bring up the dependencies (according to the microservices being used):
+        First, run the Kafka service, which is a publish/subscribe system (pub/sub) that provides a "broker" for distributing events.
+  	docker run -p 2181:2181 -d -p 9092:9092 --name servicekafka --network distribuidos -e ADVERTISED_HOST=servicekafka -e NUM_PARTITIONS=3 johnnypark/kafka-zookeeper:2.6.0 
+- Then, start the Consul, which is commonly used for configuration management and service discovery.
+	-docker run -d -p 8500:8500 -p 8600:8600/udp --network distribuidos --name consul consul:1.15 agent -server -bootstrap-expect 1 -ui -data-dir /tmp -client=0.0.0.0 
+- Next, start the PostgreSQL (the database that the invoice microservice will use).
 	docker run -p 5434:5432 --name postgres --network distribuidos -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db_invoice -d postgres:12-alpine 
-•	Finally, run the two services, first app-config and then app-invoice.
+- Finally, run the two services, first app-config and then app-invoice.
 	docker run -d -p 8888:8888 --network distribuidos --name app-config luis486/appconfig:0.0.1 
 	docker run -d -p 8006:8006 --network distribuidos --name app-invoice luis486
   
