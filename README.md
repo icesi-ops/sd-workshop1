@@ -1,9 +1,6 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# sd-workshop1 2024-A
+- By : Samuel Guerrero
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
-
-PR a sd-workshop1
+## 1. Run microservice app-config:
+1. Edit Dockerfile so it matches the applications.properties file, so we change the port so it matches to 8888
+2. In the application.properties file we comment the consul service configuration, because it has no use at the moment.
