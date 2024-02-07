@@ -61,4 +61,4 @@ docker run -d -p 8006:8006 --network distribuidos --name samuelguerrero1184/app-
 ![networks](./assets/Networks.png)
 ![images](./assets/ImageBuilds.png)
 ![configTest](./assets/ConfigTest.png)
-![InvoiceTest](./assetes/InvoiceTest.png)
+![InvoiceTest](./assets/InvoiceTest.png)
