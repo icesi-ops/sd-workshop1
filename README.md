@@ -37,14 +37,22 @@ Moving to the corresponding folders to begin
 Change the dockerfile, change port 8888
 
 - vi Dockerfile
+  
+Run and consul
 
 - docker run -d -p 8500:8500 -p 8600:8600/udp --network distribuidos --name consul consul:1.15 agent -server -bootstrap-expect 1 -ui -data-dir /tmp -client=0.0.0.0
 
--  docker ps para revisar
+  docker ps for check
+
+Run kafka
 
 - docker run -p 2181:2181 -d -p 9092:9092 --name servicekafka --network distribuidos -e ADVERTISED_HOST=servicekafka -e NUM_PARTITIONS=3 johnnypark/kafka-zookeeper:2.6.0
 
+Run database
+
 - sudo docker run -p 5434:5432  --name postgres --network distribuidos -e POSTGRES_PASSWORD=postgres -e  POSTGRES_DB=db_invoice -d postgres:12-alpine
+
+build app-config
 
 - sudo docker build -t camilogonzalez7424/app-config .
 
