@@ -47,7 +47,7 @@ docker run -p 5432:5432 --name postgres --network distribuidos -e POSTGRES_PASSW
 psql -h localhost -d db_invoice -U postgres -f postgres.sql
 psql -h localhost -d db_invoice -U postgres -f data.sql
 ```
-![tables](.assets/tables.png)
+![tables](.assets/Tables.png)
 ## 4. Run microservice app-invoice
 1. Edit dockerfile to match port in application.properties file with port 8006
 2. Build the app-invoice microservice 
