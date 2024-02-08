@@ -101,8 +101,7 @@ docker image push usuario-docker/nombreimagen:tag
 ```
 
 ### DockerHub Repository
-![image](https://drive.google.com/file/d/1npXuT5mEbTVlwBUgEUohmgt3rPCumI2M/view?usp=sharing)
-
+![img.png](img.png)
 
 ## 3. Execute the script
 
