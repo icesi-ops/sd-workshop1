@@ -105,11 +105,6 @@ docker image push usuario-docker/nombreimagen:tag
 
 ## 3. Execute the script
 
-We need to be in the folder where all the yml files are and where the script bash is to deploy the microservices
-
-```bash
-cd deploy
-```
 To execute the script is needed an operating system basen on Unix/Linux or we can try to execute it in the console of Git Bash
 
 ```bash
