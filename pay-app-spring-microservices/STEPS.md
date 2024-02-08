@@ -66,3 +66,4 @@ docker run -p 8006:8006 --name app-invoice --network distribuidos -d alexjr2002/
 ```
 ### 5.4. Working proof
 ![alt text](app-invoice-proof.png)
+![alt text](app-invoice-data.png)
