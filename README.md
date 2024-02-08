@@ -91,6 +91,14 @@ We run the app-invoice:
 
 ![image](https://github.com/SGutierrez-11/sd-workshop1/assets/69949511/1bcc1bc7-5c71-4612-ae15-f8a4052726be)
 
+Now, we insert to postgres db_invoice in the table invoice the data.
+
+![image](https://github.com/SGutierrez-11/sd-workshop1/assets/69949511/3e5523f0-6dcf-4d9d-84f3-bdae42eef09d)
+
+Testing:
+
+![image](https://github.com/SGutierrez-11/sd-workshop1/assets/69949511/1299b957-b69c-42a4-9689-c659e9f16169)
+
 
 Finally we upload the changes
  
