@@ -106,11 +106,13 @@ docker image push usuario-docker/nombreimagen:tag
 ## 3. Execute the script
 
 To execute the script is needed an operating system basen on Unix/Linux or we can try to execute it in the console of Git Bash
-
 ```bash
 chmod +x deploy.sh
 ./deploy.sh
 ```
+
+## 4. Test the services
+![img_1.png](img_1.png)
   
     
 
