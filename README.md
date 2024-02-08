@@ -50,6 +50,13 @@ Change the dockerfile, change port 8888
 
 - docker run -d -p 8888:8888 --network distribuidos --name app-config camilogonzalez7424/app-config:latest
 
+Add next dependences to build.gradle of invoce
+
+- implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+-implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+And build app-invoce
+
 - docker build -t camilogonzalez7424/app-invoice .
 
 - docker run -d -p 8006:8006 --network distribuidos --name app-invoice camilogonzalez7424/app-invoice:latest
@@ -72,7 +79,8 @@ Change the dockerfile, change port 8888
 
 ## <b> Overview </b> 💻🕹
 
-![dependencias](https://github.com/icesi-ops/sd-workshop1/assets/69222739/0d8fda09-ecc1-4751-9bc8-e1ac0649d2aa)
+<img width="666" alt="image" src="https://github.com/icesi-ops/training_microservices/assets/69222739/9309a3ea-9106-47d0-b116-dd48b4daa8bc">
+
 
 <br></br>
 
