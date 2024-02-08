@@ -51,6 +51,11 @@ The following are the steps executed to succesfully ran the microservice app-inv
   docker run -p 5432:5432 --name postgres --network distribuidos -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db_invoice -d postgres
   ```
   ![postgres](./assets/postgres.png)
+  2. Run the database tables initialization for Postgres found in resources folder (disclaimer: you should have [psql](https://www.timescale.com/blog/how-to-install-psql-on-mac-ubuntu-debian-windows/) installed in your OS):
+  ```
+  psql -h localhost -d db_invoice -U postgres -f postgres.sql
+  psql -h localhost -d db_invoice -U postgres -f data.sql
+  ```
 
 
 ## 4. Run microservice app-invoice:
