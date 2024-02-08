@@ -37,11 +37,17 @@ docker run -p 2181:2181 -d -p 9092:9092 --name servicekafka --network distribuid
 ```
 ![kafka](./assets/KafkaRun.png)
 ## 3. Run postgres database
-1. Use docker command to pull image, build and run it
+1. Use docker command to pull image, build and run it (DISCLAMER: You must have PostgreSQL installed to run all commands)
 ```
 docker run -p 5432:5432 --name postgres --network distribuidos -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db_invoice -d postgres
 ```
 ![postgres](./assets/PostgressRun.png)
+2. Locate the postgres file in the resource folder and run the following commands to create tables a insert data
+```
+psql -h localhost -d db_invoice -U postgres -f postgres.sql
+psql -h localhost -d db_invoice -U postgres -f data.sql
+```
+![tables](.assets/tables.png)
 ## 4. Run microservice app-invoice
 1. Edit dockerfile to match port in application.properties file with port 8006
 2. Build the app-invoice microservice 
@@ -54,7 +60,6 @@ docker build -t samuelguerrero1184/app-invoice:0.0.1 .
 docker run -d -p 8006:8006 --network distribuidos --name samuelguerrero1184/app-invoice:0.0.1
 ```
 ![invoice-run](./assets/AppInvoiceRun.png)
-
 ## Evidence
 
 ![login](./assets/Login.png)
