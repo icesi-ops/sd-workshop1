@@ -1,9 +1,13 @@
-# sd-workshop1 2021-B
-- make that IP assignament dynamically  
-- Use config.vm.provision "file" to transfer a file from your host machine to your guest machine. THis file is a bash script that print HOSTNAME+IP+Timestamp server+DIsk space avaialable+proccess running+the most consuming process.  
-- use config.vm.provision "shell" to execute the file that you transfered  
+# Microservices with Docker
 
-## Bonus
-Servidor web que sea scraping de cualquier página web
+_In this repository, you will find the configurations of images, containers, and other necessary components to initialize various microservices, namely app-config and app-invoice._
 
-PR a sd-workshop1
+
+## Documentation
+
+[Click here for the documentation pdf](https://github.com/DanielRamirez1901/sd-workshop1/blob/master/Workshop%201%20-%20Daniel%20Ramirez%20Gomez.pdf)
+
+## Authors
+
+* Daniel Ramirez Gomez. [GitHub profile.](https://github.com/DanielRamirez1901 "GitHub profile.")
+
