@@ -132,8 +132,7 @@ chmod +x deploy.sh
 ### App-Pay
 ![img_2.png](img_2.png)
 
-### App-Transaction
-![img_3.png](img_3.png)
+
 
   
     
