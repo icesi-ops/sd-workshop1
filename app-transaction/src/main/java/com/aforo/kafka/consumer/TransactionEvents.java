@@ -1,7 +1,7 @@
 package com.aforo.kafka.consumer;
 
-import com.aforo.dao.InvoiceDao;
-import com.aforo.model.Invoice;
+import com.aforo.dao.TransactionDao;
+import com.aforo.model.Transaction;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class TransactionEvents {
 
     @Autowired
-    private InvoiceDao _dao;
+    private TransactionDao _dao;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -22,14 +22,8 @@ public class TransactionEvents {
     private Logger log = LoggerFactory.getLogger(TransactionEvents.class);
 
     public void processTransactionEvent(ConsumerRecord<Integer, String> consumerRecord) throws JsonProcessingException {
-        Invoice event = objectMapper.readValue(consumerRecord.value(), Invoice.class);
-        Invoice invoice = _dao.findById(event.getIdInvoice()).get();
-        log.info("Actualizando Invoice ***" + event.getIdInvoice());
-   		log.info("Se ha pagado la factura # " + event.getIdInvoice());
-        invoice.setAmount(invoice.getAmount()-event.getAmount());
-        if (invoice.getAmount()<=0){
-            invoice.setState(1);
-        }
+        Transaction event = objectMapper.readValue(consumerRecord.value(), Transaction.class);
+        log.info("Registrando Transaccion Invoice ***" + event.getIdInvoice());
         _dao.save(event);
     }
 }
