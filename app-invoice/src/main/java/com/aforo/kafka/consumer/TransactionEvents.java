@@ -30,6 +30,6 @@ public class TransactionEvents {
         if (invoice.getAmount()<=0){
             invoice.setState(1);
         }
-        _dao.save(event);
+        _dao.save(invoice);
     }
 }
