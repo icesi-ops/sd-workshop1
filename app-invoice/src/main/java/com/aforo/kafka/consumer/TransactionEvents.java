@@ -29,6 +29,9 @@ public class TransactionEvents {
         invoice.setAmount(invoice.getAmount()-event.getAmount());
         if (invoice.getAmount()<=0){
             invoice.setState(1);
+            if (invoice.getAmount()<0){
+                invoice.setAmount(0.00);
+            }
         }
         _dao.save(invoice);
     }
