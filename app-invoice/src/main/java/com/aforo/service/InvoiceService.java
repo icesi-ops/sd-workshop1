@@ -16,4 +16,8 @@ public class InvoiceService {
     public List<Invoice> findAllInvoices() {
         return _dao.findAllInvoices();
     }
+
+    public Invoice findInvoiceById(Integer invoiceId) {
+        return _dao.findByIdInvoice(invoiceId).orElseThrow(() -> new RuntimeException("Invoice not found"));
+    }
 }
