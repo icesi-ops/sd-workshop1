@@ -6,10 +6,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface InvoiceDao extends CrudRepository<Invoice, Integer> {
 
     @Query("select i from Invoice i order by i.idInvoice")
     List<Invoice> findAllInvoices();
+
+    Optional<Invoice> findByIdInvoice(Integer idInvoice);
 }
